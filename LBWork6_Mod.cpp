@@ -9,149 +9,149 @@
 using namespace std;
 
 void ExamTaskC2() {
-    std::cout << "====== 1. Çàäàíèå ¹1 - ExamTaskC2 ======\n";
+    std::cout << "====== 1. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ â„–1 - ExamTaskC2 ======\n";
     ofstream f2("LBWork6Answers.txt", ios::out);
     int N;
-    std::cout << "Ââåäèòå êîë-âî êëèåíòîâ, î êîòîðûõ õîòèòå óçíàòü èíôîðìàöèþ: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð¾Ð², Ð¾ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ·Ð½Ð°Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ: ";
     std::cin >> N;
     CInfo MaxT = {-100, -100, -100, -100};
-    std::cout << "Ââåäèòå äàííûå â ôîðìàòå: Ãîä (2000-2010)/Ìåñÿö (1-12)/Ïðîäîëæèòåëüíîñòü (1-30)/Êîä_êëèåíòà (10-99).\n";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ: Ð“Ð¾Ð´ (2000-2010)/ÐœÐµÑÑÑ† (1-12)/ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ (1-30)/ÐšÐ¾Ð´_ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð° (10-99).\n";
     for (int i = 0; i < N; i++) {
         CInfo Cl;
-        std::cout << "Êëèåíò ¹" << i + 1 << ": ";
+        std::cout << "ÐšÐ»Ð¸ÐµÐ½Ñ‚ â„–" << i + 1 << ": ";
         std::cin >> Cl.Year >> Cl.Month >> Cl.Duration >> Cl.ClientCode;
         std::cout << "\n";
         if (Cl.Year < 2000 || Cl.Year > 2010 || Cl.Month < 0 || Cl.Month > 12 || Cl.Duration < 1 || Cl.Duration > 30 || Cl.ClientCode < 10 || Cl.ClientCode > 99) {
-            std::cout << "Âû íåâåðíî ââåëè äàííûå!\n";
+            std::cout << "Ð’Ñ‹ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾ Ð²Ð²ÐµÐ»Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ!\n";
             return;
         }
         if (Cl.Duration > MaxT.Duration) {
             MaxT = Cl;
         }
     }
-    std::cout << "Ðåçóëüòàòû (ïðîäîëæèòåëüíîñòü/ãîä/ìåñÿö): " << MaxT.Duration << " " << MaxT.Year << " " << MaxT.Month << "\n";
-    f2 << "Ðåçóëüòàòû (ïðîäîëæèòåëüíîñòü/ãîä/ìåñÿö): " << MaxT.Duration << " " << MaxT.Year << " " << MaxT.Month << "\n";
+    std::cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ (Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ/Ð³Ð¾Ð´/Ð¼ÐµÑÑÑ†): " << MaxT.Duration << " " << MaxT.Year << " " << MaxT.Month << "\n";
+    f2 << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ (Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ/Ð³Ð¾Ð´/Ð¼ÐµÑÑÑ†): " << MaxT.Duration << " " << MaxT.Year << " " << MaxT.Month << "\n";
     f2.close();
-    std::cout << "========= Êîíåö çàäà÷è =========\n";
+    std::cout << "========= ÐšÐ¾Ð½ÐµÑ† Ð·Ð°Ð´Ð°Ñ‡Ð¸ =========\n";
 }
 
 bool InputPupil(Pupil& PL, int id) {
     PupilData PD;
 
-    std::cout << "Ââåäèòå ÔÈ ó÷åíèêà ¹" << id + 1 << ": ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¤Ð˜ ÑƒÑ‡ÐµÐ½Ð¸ÐºÐ° â„–" << id + 1 << ": ";
     std::cin >> PL.SurName >> PL.Name;
 
-    std::cout << "Ââåäèòå êëàññ ó÷åíèêà: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ»Ð°ÑÑ ÑƒÑ‡ÐµÐ½Ð¸ÐºÐ°: ";
     std::cin >> PL.Grade;
     if (PL.Grade < 1 || PL.Grade > 4) {
-        std::cout << "Íåâåðíî ââåä¸í êëàññ!\n";
+        std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ð¾ Ð²Ð²ÐµÐ´Ñ‘Ð½ ÐºÐ»Ð°ÑÑ!\n";
         return false;
     }
 
     if (PL.Grade == 1) {
-        std::cout << "Ââåäèòå ñêîðîñòü ÷òåíèÿ ó÷åíèêà (ñëîâ/ìèí): ";
+        std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ ÑƒÑ‡ÐµÐ½Ð¸ÐºÐ° (ÑÐ»Ð¾Ð²/Ð¼Ð¸Ð½): ";
         std::cin >> PL.PD.Reading;
-        if (PL.PD.Reading <= 0) { std::cout << "Ñêîðîñòü ÷òåíèÿ äîëæíà áûòü áîëüøå íóëÿ!"; return false; }
+        if (PL.PD.Reading <= 0) { std::cout << "Ð¡ÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð° Ð±Ñ‹Ñ‚ÑŒ Ð±Ð¾Ð»ÑŒÑˆÐµ Ð½ÑƒÐ»Ñ!"; return false; }
     } else if (PL.Grade == 2 || PL.Grade == 3) {
-        std::cout << "Ââåäèòå áàëëû çà èòîãîâóþ êîíòðîëüíóþ ïî ìàòåìàòèêå (1 - 10): ";
+        std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð±Ð°Ð»Ð»Ñ‹ Ð·Ð° Ð¸Ñ‚Ð¾Ð³Ð¾Ð²ÑƒÑŽ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒÐ½ÑƒÑŽ Ð¿Ð¾ Ð¼Ð°Ñ‚ÐµÐ¼Ð°Ñ‚Ð¸ÐºÐµ (1 - 10): ";
         std::cin >> PL.PD.KTMath;
-        if (PL.PD.KTMath < 1 || PL.PD.KTMath > 10) { std::cout << "Îøèáêà: áàëëû äîëæíû áûòü îò 1 äî 10\n"; return false; }
+        if (PL.PD.KTMath < 1 || PL.PD.KTMath > 10) { std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°: Ð±Ð°Ð»Ð»Ñ‹ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ 1 Ð´Ð¾ 10\n"; return false; }
     } else if (PL.Grade == 4) {
-        std::cout << "Ââåäèòå áàëëû çà èòîãîâóþ àòòåñòàöèþ ó÷åíèêà (1 - 100): ";
+        std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð±Ð°Ð»Ð»Ñ‹ Ð·Ð° Ð¸Ñ‚Ð¾Ð³Ð¾Ð²ÑƒÑŽ Ð°Ñ‚Ñ‚ÐµÑÑ‚Ð°Ñ†Ð¸ÑŽ ÑƒÑ‡ÐµÐ½Ð¸ÐºÐ° (1 - 100): ";
         std::cin >> PL.PD.ExamScores;
-        if (PL.PD.ExamScores < 1 || PL.PD.ExamScores > 100) { std::cout << "Îøèáêà: áàëëû äîëæíû áûòü îò 1 äî 100\n"; return false; }
-    } else { std::cout << "Íåâåðíî ââåäåíû äàííûå!"; return false; }
+        if (PL.PD.ExamScores < 1 || PL.PD.ExamScores > 100) { std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°: Ð±Ð°Ð»Ð»Ñ‹ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ 1 Ð´Ð¾ 100\n"; return false; }
+    } else { std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ð¾ Ð²Ð²ÐµÐ´ÐµÐ½Ñ‹ Ð´Ð°Ð½Ð½Ñ‹Ðµ!"; return false; }
     return true;
 }
 
 void Task2() {
-    std::cout << "====== 2. Çàäàíèå ¹2 - Task2 ======\n";
+    std::cout << "====== 2. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ â„–2 - Task2 ======\n";
 
     ofstream f2("LBWork6Answers.txt", ios::out);
     if (!f2) { std::cout << "Error!\n"; return; }
 
     int N;
-    std::cout << "Ââåäèòå êîë-âî ó÷åíèêîâ: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑƒÑ‡ÐµÐ½Ð¸ÐºÐ¾Ð²: ";
     std::cin >> N;
 
     vector <Pupil> Pupils(N);
-    f2 << "¹  |  Êëàññ  |   Ôàìèëèÿ è Èìÿ    |     Äîï. èíôîðìàöèÿ\n";
+    f2 << "â„–  |  ÐšÐ»Ð°ÑÑ  |   Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð¸ Ð˜Ð¼Ñ    |     Ð”Ð¾Ð¿. Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ\n";
     f2 << "_______________________________________________________\n";
 
     for (int i = 0; i < N; i++) {
         if (!InputPupil(Pupils[i], i)) {
-            std::cout << "\nÂû íåâåðíî ââåëè äàííûå. Ââîä ïðåðâàí.\n";
+            std::cout << "\nÐ’Ñ‹ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾ Ð²Ð²ÐµÐ»Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ. Ð’Ð²Ð¾Ð´ Ð¿Ñ€ÐµÑ€Ð²Ð°Ð½.\n";
             f2.close();
             return; 
         }
         f2 << i + 1 << "  |  " << Pupils[i].Grade << "      |  " << Pupils[i].SurName << " " << Pupils[i].Name << "   |   ";
         if (Pupils[i].Grade == 1) {
-            f2 << Pupils[i].PD.Reading << " ñëîâ/ìèí\n";
+            f2 << Pupils[i].PD.Reading << " ÑÐ»Ð¾Ð²/Ð¼Ð¸Ð½\n";
         } else if (Pupils[i].Grade == 2 || Pupils[i].Grade == 3) {
-            f2 << Pupils[i].PD.KTMath << " áàëëîâ (ìàòåì.)\n";
+            f2 << Pupils[i].PD.KTMath << " Ð±Ð°Ð»Ð»Ð¾Ð² (Ð¼Ð°Ñ‚ÐµÐ¼.)\n";
         } else if (Pupils[i].Grade == 4) {
-            f2 << Pupils[i].PD.ExamScores << " áàëëîâ (èòîãîâàÿ àòò.)\n";
+            f2 << Pupils[i].PD.ExamScores << " Ð±Ð°Ð»Ð»Ð¾Ð² (Ð¸Ñ‚Ð¾Ð³Ð¾Ð²Ð°Ñ Ð°Ñ‚Ñ‚.)\n";
         }
     }
     f2.close();
-    std::cout << "Äàííûå çàïèñàíû â ôàéë 'LBWork6Answers.txt'.\n\nÐåçóëüòàò:\n\n";
+    std::cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ñ‹ Ð² Ñ„Ð°Ð¹Ð» 'LBWork6Answers.txt'.\n\nÐ ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚:\n\n";
 
-    std::cout << "¹  |  Êëàññ  |   Ôàìèëèÿ è Èìÿ    |     Äîï. èíôîðìàöèÿ\n";
+    std::cout << "â„–  |  ÐšÐ»Ð°ÑÑ  |   Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð¸ Ð˜Ð¼Ñ    |     Ð”Ð¾Ð¿. Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ\n";
     std::cout << "_________________________________________________________\n";
 
     for (int i = 0; i < Pupils.size(); i++) {
         std::cout << i + 1 << "  |  " << Pupils[i].Grade << "      |  " << Pupils[i].SurName << " " << Pupils[i].Name << "   |   ";
         if (Pupils[i].Grade == 1)
-            std::cout << Pupils[i].PD.Reading << " ñëîâ/ìèí\n";
+            std::cout << Pupils[i].PD.Reading << " ÑÐ»Ð¾Ð²/Ð¼Ð¸Ð½\n";
         else if (Pupils[i].Grade == 2 || Pupils[i].Grade == 3)
-            std::cout << Pupils[i].PD.KTMath << " áàëëîâ (ìàòåì.)\n";
+            std::cout << Pupils[i].PD.KTMath << " Ð±Ð°Ð»Ð»Ð¾Ð² (Ð¼Ð°Ñ‚ÐµÐ¼.)\n";
         else if (Pupils[i].Grade == 4)
-            std::cout << Pupils[i].PD.ExamScores << " áàëëîâ (èòîãîâàÿ àòò.)\n";
+            std::cout << Pupils[i].PD.ExamScores << " Ð±Ð°Ð»Ð»Ð¾Ð² (Ð¸Ñ‚Ð¾Ð³Ð¾Ð²Ð°Ñ Ð°Ñ‚Ñ‚.)\n";
         }
-    std::cout << "====================== Êîíåö çàäà÷è =====================\n";
+    std::cout << "====================== ÐšÐ¾Ð½ÐµÑ† Ð·Ð°Ð´Ð°Ñ‡Ð¸ =====================\n";
 }
 
 int SelectAction() {
     int Choice;
-    std::cout << "\nÂûáåðèòå äåéñòâèå 1-6: \n";
-    std::cout << "1. Äîáàâèòü ñòóäåíòà;\n";
-    std::cout << "2. Âûâåñòè èíôîðìàöèþ î ñòóäåíòå;\n";
-    std::cout << "3. Ïîäñ÷¸ò êîë-âà ñòóäåíòîâ ñ âûñîêèì ñðåäíèì áàëëîì (âûøå 4.0);\n";
-    std::cout << "4. Ïîèñê ñòóäåíòîâ ïî âîçðàñòó;\n";
-    std::cout << "5. Èçìåíèòü èíôîðìàöèþ î ñòóäåíòå;\n";
-    std::cout << "6. Âû÷èñëèòü îáùèé ñðåäíèé áàëë îïðåäåë¸ííîãî ñòóäåíòà;\n";
-    std::cout << "0. Âåðíóòüñÿ ê âûáîðó çàäàíèé.\n";
-    std::cout << "Âàø âûáîð? ";
+    std::cout << "\nÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ 1-6: \n";
+    std::cout << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°;\n";
+    std::cout << "2. Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ðµ;\n";
+    std::cout << "3. ÐŸÐ¾Ð´ÑÑ‡Ñ‘Ñ‚ ÐºÐ¾Ð»-Ð²Ð° ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ñ Ð²Ñ‹ÑÐ¾ÐºÐ¸Ð¼ ÑÑ€ÐµÐ´Ð½Ð¸Ð¼ Ð±Ð°Ð»Ð»Ð¾Ð¼ (Ð²Ñ‹ÑˆÐµ 4.0);\n";
+    std::cout << "4. ÐŸÐ¾Ð¸ÑÐº ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ð¿Ð¾ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ñƒ;\n";
+    std::cout << "5. Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ðµ;\n";
+    std::cout << "6. Ð’Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÑŒ Ð¾Ð±Ñ‰Ð¸Ð¹ ÑÑ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð» Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ñ‘Ð½Ð½Ð¾Ð³Ð¾ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°;\n";
+    std::cout << "0. Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ Ðº Ð²Ñ‹Ð±Ð¾Ñ€Ñƒ Ð·Ð°Ð´Ð°Ð½Ð¸Ð¹.\n";
+    std::cout << "Ð’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€? ";
     std::cin >> Choice;
     return Choice;
 }
 
 void AddStudent(std::vector<Student>& Students) {
     Student Add;
-    std::cout << "Ââåäèòå èìÿ ñòóäåíòà: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
     std::cin >> Add.Name;
-    std::cout << "Ââåäèòå âîçðàñò ñòóäåíòà: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
     std::cin >> Add.Age;
     if (Add.Age >= 0 && Add.Age <= 70) {
-        std::cout << "Ââåäèòå ñðåäíèé áàëë ñòóäåíòà: ";
+        std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð» ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
         std::cin >> Add.Points;
         Students.push_back(Add);
-        std::cout << "Ñòóäåíò óñïåøíî äîáàâëåí!\n";
+        std::cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½!\n";
     } else {
-        std::cout << "Ââåäèòå êîððåêòíûé âîçðàñò ñòóäåíòà!\n";
+        std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°!\n";
     }
 }
 
 void OutputInformationAboutAStudent(const vector<Student>& ST) {
-    if (ST.empty()) { std::cout << "\nÑïèñîê ñòóäåíòîâ ïóñò!\n"; return; }
+    if (ST.empty()) { std::cout << "\nÐ¡Ð¿Ð¸ÑÐ¾Ðº ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ð¿ÑƒÑÑ‚!\n"; return; }
     int NumStud;
-    std::cout << "\nÂâåäèòå ëþáîé íîìåð ñòóäåíòà ¹";
+    std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð»ÑŽÐ±Ð¾Ð¹ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° â„–";
     std::cin >> NumStud;
     if (NumStud <= ST.size()) {
-        std::cout << "\nÑòóäåíò ñ ¹" << NumStud << "\n";
-        std::cout << NumStud << ". " << ST[NumStud - 1].Name << ", " << ST[NumStud - 1].Age << " ëåò, " << ST[NumStud - 1].Points << " áàëëîâ;\n";
+        std::cout << "\nÐ¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ Ñ â„–" << NumStud << "\n";
+        std::cout << NumStud << ". " << ST[NumStud - 1].Name << ", " << ST[NumStud - 1].Age << " Ð»ÐµÑ‚, " << ST[NumStud - 1].Points << " Ð±Ð°Ð»Ð»Ð¾Ð²;\n";
     } else {
-        std::cout << "Íåò ñòóäåíòà ñ òàêèì íîìåðîì.\n";
+        std::cout << "ÐÐµÑ‚ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð¼.\n";
         return;
     }
 }
@@ -168,7 +168,7 @@ int CntStudetsPoints(const std::vector<Student>& ST) {
 
 void SearchStudents(const std::vector<Student>& ST, int Age) {
     bool Found = false;
-    std::cout << "Íàéäåííûå ñòóäåíòû âîçðàñòà " << Age << ":\n";
+    std::cout << "ÐÐ°Ð¹Ð´ÐµÐ½Ð½Ñ‹Ðµ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ñ‹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð° " << Age << ":\n";
     for (int i = 0; i < ST.size(); i++) {
         if (ST[i].Age == Age) {
             std::cout << i + 1 << ". " << ST[i].Name << " " << ST[i].Points << "\n";
@@ -176,28 +176,28 @@ void SearchStudents(const std::vector<Student>& ST, int Age) {
         }
     }
     if (!Found) {
-        std::cout <<  "Ñòóäåíòîâ òàêîãî âîçðàñòà íå íàéäåíî.\n";
+        std::cout <<  "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾.\n";
     }
 }
 
 void ModifyStudInfo(std::vector <Student>& ST) {
-    if (ST.empty()) { std::cout << "Ñïèñîê ñòóäåíòîâ ïóñò!\n"; return; }
+    if (ST.empty()) { std::cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ð¿ÑƒÑÑ‚!\n"; return; }
     std::string Name;
-    std::cout << "Ââåäèòå èìÿ ñòóäåíòà äëÿ èçìåíåíèÿ: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° Ð´Ð»Ñ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ: ";
     std::cin >> Name;
     for (int i = 0; i < ST.size(); i++) {
         if (ST[i].Name == Name) {
-            std::cout << "Òåêóùèå äàííûå ñòóäåíòà: \n";
-            std::cout << i + 1 << ". " << ST[i].Name << ", " << ST[i].Age << " ëåò, " << ST[i].Points << " áàëëîâ;\n";
-            std::cout << "Ââåäèòå íîâûé âîçðàñò: ";
+            std::cout << "Ð¢ÐµÐºÑƒÑ‰Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: \n";
+            std::cout << i + 1 << ". " << ST[i].Name << ", " << ST[i].Age << " Ð»ÐµÑ‚, " << ST[i].Points << " Ð±Ð°Ð»Ð»Ð¾Ð²;\n";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚: ";
             std::cin >> ST[i].Age;
-            std::cout << "Ââåäèòå íîâûé ñðåäíèé áàëë: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ ÑÑ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð»: ";
             std::cin >> ST[i].Points;
-            std::cout << "\nÄàííûå îáíîâëåíû.\n";
+            std::cout << "\nÐ”Ð°Ð½Ð½Ñ‹Ðµ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ñ‹.\n";
             return;
         }
     }
-    std::cout << "Ñòóäåíò ñ èìåíåì '" << Name << "' íå íàéäåí.\n";
+    std::cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ Ñ Ð¸Ð¼ÐµÐ½ÐµÐ¼ '" << Name << "' Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½.\n";
 }
 
 double CalculateGPA(const std::vector<Student> ST) {
@@ -207,16 +207,16 @@ double CalculateGPA(const std::vector<Student> ST) {
     double Sum = 0.0, Result = 0.0;
     int Quantity = ST.size(), Count, NumStud;
     for (int i = 0; i < ST.size(); i++) {
-        std::cout << i + 1 << ". " << ST[i].Name << ", " << ST[i].Points << " áàëëîâ;\n";
+        std::cout << i + 1 << ". " << ST[i].Name << ", " << ST[i].Points << " Ð±Ð°Ð»Ð»Ð¾Ð²;\n";
     }
-    std::cout << "Ñêîëüêî ñòóäåíòîâ âûáðàòü äëÿ âû÷èñëåíèÿ îáùåãî ñðåäíåãî áàëëà? ";
+    std::cout << "Ð¡ÐºÐ¾Ð»ÑŒÐºÐ¾ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ð²Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ Ð´Ð»Ñ Ð²Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ñ Ð¾Ð±Ñ‰ÐµÐ³Ð¾ ÑÑ€ÐµÐ´Ð½ÐµÐ³Ð¾ Ð±Ð°Ð»Ð»Ð°? ";
     std::cin >> Count;
-    if (Count <= 0 || Count > Quantity) { std::cout << "Íåâåðíîå êîë-âî.\n"; return 0.0; }
-    std::cout << "Ââåäèòå íîìåðà ñòóäåíòîâ: \n";
+    if (Count <= 0 || Count > Quantity) { std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ ÐºÐ¾Ð»-Ð²Ð¾.\n"; return 0.0; }
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€Ð° ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²: \n";
     for (int i = 0; i < Count; i++) {
         std::cin >> NumStud;
         if (NumStud < 1 || NumStud > ST.size()) {
-            std::cout << "Íåêîððåêòíûé íîìåð: " << NumStud << ". Ïðîïóñê íîìåðà.\n";
+            std::cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€: " << NumStud << ". ÐŸÑ€Ð¾Ð¿ÑƒÑÐº Ð½Ð¾Ð¼ÐµÑ€Ð°.\n";
             continue;
         }
         Sum += ST[NumStud - 1].Points;
@@ -231,8 +231,8 @@ void Task3() {
           
         int Choice1 = SelectAction();
         if (Choice1 == 0) {
-            std::cout << "Çàâåðøåíèå ðàáîòû...\n";
-            std::cout << "Ðàáîòà çàâåðøåíà.\n";
+            std::cout << "Ð—Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð¸Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹...\n";
+            std::cout << "Ð Ð°Ð±Ð¾Ñ‚Ð° Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°.\n";
             return;
         }
         switch (Choice1) {
@@ -244,11 +244,11 @@ void Task3() {
                 break;
             } case 3: {
                 int Cnt = CntStudetsPoints(Students);
-                std::cout << "\nÑòóäåíòîâ ñ áàëëàìè áîëüøå 4.0: " << Cnt << "\n";
+                std::cout << "\nÐ¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð² Ñ Ð±Ð°Ð»Ð»Ð°Ð¼Ð¸ Ð±Ð¾Ð»ÑŒÑˆÐµ 4.0: " << Cnt << "\n";
                 break;
             } case 4: {
                 int Age;
-                std::cout << "\nÂâåäèòå âîçðàñò, ïî êîòîðîìó õîòèòå íàéòè ñòóäåíòîâ: ";
+                std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚, Ð¿Ð¾ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼Ñƒ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð½Ð°Ð¹Ñ‚Ð¸ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²: ";
                 std::cin >> Age;
                 SearchStudents(Students, Age);
                 break;
@@ -257,10 +257,10 @@ void Task3() {
                 break;
             } case 6: {
                 double GPA = CalculateGPA(Students);
-                std::cout << "Îáùèé ñðåäíèé áàëë âñåõ ñòóäåíòîâ: " << GPA << "\n";
+                std::cout << "ÐžÐ±Ñ‰Ð¸Ð¹ ÑÑ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð» Ð²ÑÐµÑ… ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²: " << GPA << "\n";
                 break;
             } default: {
-                std::cout << "Íåêîððåêòíî ââåäåíû äàííûå.\n";
+                std::cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾ Ð²Ð²ÐµÐ´ÐµÐ½Ñ‹ Ð´Ð°Ð½Ð½Ñ‹Ðµ.\n";
                 break;
             }
         }

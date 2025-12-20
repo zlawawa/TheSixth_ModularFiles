@@ -9,12 +9,12 @@ using namespace std;
 
 int ChooseTask() {
     int ChoiceTasks;
-    std::cout << "\nÂûáåðèòå çàäà÷ó: \n";
-    std::cout << "1. Çàäà÷à ¹1 - ExamTaskC2; \n";
-    std::cout << "2. Çàäà÷à ¹2 - 2; \n";
-    std::cout << "3. Çàäà÷à ¹3 - 3; \n";
-    std::cout << "0. Âûõîä. \n";
-    std::cout << "Âàø âûáîð? ";
+    std::cout << "\nÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð·Ð°Ð´Ð°Ñ‡Ñƒ: \n";
+    std::cout << "1. Ð—Ð°Ð´Ð°Ñ‡Ð° â„–1 - ExamTaskC2; \n";
+    std::cout << "2. Ð—Ð°Ð´Ð°Ñ‡Ð° â„–2 - 2; \n";
+    std::cout << "3. Ð—Ð°Ð´Ð°Ñ‡Ð° â„–3 - 3; \n";
+    std::cout << "0. Ð’Ñ‹Ñ…Ð¾Ð´. \n";
+    std::cout << "Ð’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€? ";
     std::cin >> ChoiceTasks;
     std::cout << "\n";
     return ChoiceTasks;
@@ -30,8 +30,8 @@ int main() {
     do {
         Choice1 = ChooseTask();
         if (Choice1 == 0) { 
-            std::cout << "Çàâåðøåíèå ðàáîòû...\n";
-            std::cout << "Ðàáîòà çàâåðøåíà.\n";
+            std::cout << "Ð—Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð¸Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹...\n";
+            std::cout << "Ð Ð°Ð±Ð¾Ñ‚Ð° Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°.\n";
             break; 
         }
         switch (Choice1) {
@@ -45,7 +45,7 @@ int main() {
                 Task3();
                 break;
             } default: {
-                std::cout << "Íåâåðíî âââåäåíû äàííûå!\n";
+                std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ð¾ Ð²Ð²Ð²ÐµÐ´ÐµÐ½Ñ‹ Ð´Ð°Ð½Ð½Ñ‹Ðµ!\n";
                 break;
             }
         } 
