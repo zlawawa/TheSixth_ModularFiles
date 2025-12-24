@@ -135,8 +135,12 @@ void AddStudent(std::vector<Student>& Students) {
     if (Add.Age >= 0 && Add.Age <= 70) {
         std::cout << "Введите средний балл студента: ";
         std::cin >> Add.Points;
-        Students.push_back(Add);
-        std::cout << "Студент успешно добавлен!\n";
+        if (Add.Points < 2.0 || Add.Points > 5.0) {
+            std::cout << "Введите корректный средний балл!\n";
+        } else {
+            Students.push_back(Add);
+            std::cout << "Студент успешно добавлен!\n";
+        }
     } else {
         std::cout << "Введите корректный возраст студента!\n";
     }
