@@ -5,7 +5,6 @@
 #include <iostream>
 #include "LBWork6.h"
 #include <fstream>
-using namespace std;
 
 int ChooseTask() {
     int ChoiceTasks;
@@ -52,3 +51,4 @@ int main() {
     } while (true);
     return 0;
 }
+
