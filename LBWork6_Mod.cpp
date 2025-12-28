@@ -6,11 +6,9 @@
 #include <string>
 #include "LBWork6.h"
 
-using namespace std;
-
 void ExamTaskC2() {
     std::cout << "====== 1. Задание №1 - ExamTaskC2 ======\n";
-    ofstream f2("LBWork6Answers.txt", ios::out);
+    std::ofstream f2("LBWork6Answers.txt", std::ios::out);
     int N;
     std::cout << "Введите кол-во клиентов, о которых хотите узнать информацию: ";
     std::cin >> N;
@@ -67,14 +65,14 @@ bool InputPupil(Pupil& PL, int id) {
 void Task2() {
     std::cout << "====== 2. Задание №2 - Task2 ======\n";
 
-    ofstream f2("LBWork6Answers.txt", ios::out);
+    std::ofstream f2("LBWork6Answers.txt", std::ios::out);
     if (!f2) { std::cout << "Error!\n"; return; }
 
     int N;
     std::cout << "Введите кол-во учеников: ";
     std::cin >> N;
 
-    vector <Pupil> Pupils(N);
+    std::vector<Pupil> Pupils(N);
     f2 << "№  |  Класс  |   Фамилия и Имя    |     Доп. информация\n";
     f2 << "_______________________________________________________\n";
 
@@ -146,7 +144,7 @@ void AddStudent(std::vector<Student>& Students) {
     }
 }
 
-void OutputInformationAboutAStudent(const vector<Student>& ST) {
+void OutputInformationAboutAStudent(const std::vector<Student>& ST) {
     if (ST.empty()) { std::cout << "\nСписок студентов пуст!\n"; return; }
     int NumStud;
     std::cout << "\nВведите любой номер студента №";
@@ -184,7 +182,7 @@ void SearchStudents(const std::vector<Student>& ST, int Age) {
     }
 }
 
-void ModifyStudInfo(std::vector <Student>& ST) {
+void ModifyStudInfo(std::vector<Student>& ST) {
     if (ST.empty()) { std::cout << "Список студентов пуст!\n"; return; }
     std::string Name;
     std::cout << "Введите имя студента для изменения: ";
@@ -232,7 +230,6 @@ double CalculateGPA(const std::vector<Student> ST) {
 void Task3() {
     std::vector<Student> Students;
     while (true) {
-          
         int Choice1 = SelectAction();
         if (Choice1 == 0) {
             std::cout << "Завершение работы...\n";
